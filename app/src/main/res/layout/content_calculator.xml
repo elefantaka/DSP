@@ -14,14 +14,6 @@
     tools:showIn="@layout/view_calculator">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter two numbers and select a button for action."
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="14dp" />
-
-    <TextView
         android:layout_width="500dp"
         android:layout_height="100dp"
         android:id="@+id/wynik"
@@ -76,7 +68,8 @@
         android:id="@+id/pierwsza "
         android:layout_above="@+id/dodawanie"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:layout_toStartOf="@+id/mnozenie" />
 
     <EditText
         android:layout_width="match_parent"
@@ -88,5 +81,36 @@
         android:layout_alignBottom="@+id/pierwsza "
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/pierwsza " />
+
+    <TextView
+        android:text="Second Number"
+        android:layout_alignTop="@+id/first"
+        android:id="@+id/second"
+        android:textSize="20sp"
+        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/pierwsza "
+        android:layout_alignStart="@+id/mnozenie" />
+
+    <TextView
+        android:text="First Number"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="12dp"
+        android:id="@+id/first"
+        android:textSize="20sp"
+        android:layout_above="@+id/pierwsza "
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/mnozenie" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter two numbers and select a button for action"
+        android:textSize="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/informacja" />
 
 </RelativeLayout>

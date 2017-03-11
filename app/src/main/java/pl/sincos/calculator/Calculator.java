@@ -10,8 +10,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
-public class Calculator extends AppCompatActivity {
+public class Calculator extends AppCompatActivity
+{
 
     EditText pierwsza;
     EditText druga;
@@ -21,39 +23,55 @@ public class Calculator extends AppCompatActivity {
     Button mnozenie;
     Button dzielenie;
 
+    TextView wynik;
+    TextView informacja;
+    TextView first;
+    TextView second;
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_calculator);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.Toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        pierwsza = (EditText) findViewById(R.id.pierwsza);
+        druga = (EditText) findViewById(R.id.druga);
+
+        dodawanie = (Button) findViewById(R.id.dodawanie);
+        odejmowanie = (Button) findViewById(R.id.odejmowanie);
+        dzielenie = (Button) findViewById(R.id.dzielenie);
+        mnozenie = (Button) findViewById(R.id.mnozenie);
+
+        wynik = (TextView) findViewById(R.id.wynik);
+        informacja = (TextView) findViewById(R.id.informacja);
+        first = (TextView) findViewById(R.id.first);
+        second = (TextView) findViewById(R.id.second);
+
+
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_calculator, menu);
         return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
             return true;
         }
 

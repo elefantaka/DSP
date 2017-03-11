@@ -16,10 +16,10 @@
             android:id="@+id/Toolbar"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="?attr/colorPrimary"
+            android:background="#FF33B5E5"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="Calculator"
-            app:titleTextColor="#ffffff" />
+            app:title="CALCULATOR"
+            app:titleTextColor="#FF99" />
 
     </android.support.design.widget.AppBarLayout>
 
