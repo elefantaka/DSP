@@ -15,18 +15,11 @@ import android.widget.TextView;
 public class Calculator extends AppCompatActivity
 {
 
-    EditText pierwsza;
-    EditText druga;
+    private EditText pierwsza, druga;
 
-    Button dodawanie;
-    Button odejmowanie;
-    Button mnozenie;
-    Button dzielenie;
+    private Button dodawanie, odejmowanie, mnozenie, dzielenie, push;
 
-    TextView wynik;
-    TextView informacja;
-    TextView first;
-    TextView second;
+    private TextView wynik, informacja, first, second;
 
 
     @Override
@@ -44,6 +37,7 @@ public class Calculator extends AppCompatActivity
         odejmowanie = (Button) findViewById(R.id.odejmowanie);
         dzielenie = (Button) findViewById(R.id.dzielenie);
         mnozenie = (Button) findViewById(R.id.mnozenie);
+        push = (Button) findViewById(R.id.push);
 
         wynik = (TextView) findViewById(R.id.wynik);
         informacja = (TextView) findViewById(R.id.informacja);
