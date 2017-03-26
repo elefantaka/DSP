@@ -1,5 +1,6 @@
 package pl.sincos.calculator;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 public class Calculator extends AppCompatActivity
 {
+    // zmienne:
 
     private EditText pierwsza, druga;
 
@@ -30,6 +32,8 @@ public class Calculator extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.Toolbar);
         setSupportActionBar(toolbar);
 
+        // okreslenie elementow
+
         pierwsza = (EditText) findViewById(R.id.pierwsza);
         druga = (EditText) findViewById(R.id.druga);
 
@@ -43,6 +47,14 @@ public class Calculator extends AppCompatActivity
         informacja = (TextView) findViewById(R.id.informacja);
         first = (TextView) findViewById(R.id.first);
         second = (TextView) findViewById(R.id.second);
+
+        //wykonanie po nacisnieciu
+
+        dodawanie.setOnClickListener((View.OnClickListener) this);
+        odejmowanie.setOnClickListener((View.OnClickListener) this);
+        mnozenie.setOnClickListener((View.OnClickListener) this);
+        dzielenie.setOnClickListener((View.OnClickListener) this);
+        push.setOnClickListener((View.OnClickListener) this);
 
 
     }
