@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Calculator extends AppCompatActivity
+public class Calculator extends AppCompatActivity implements View.OnClickListener
 {
     // zmienne:
 
@@ -31,33 +31,38 @@ public class Calculator extends AppCompatActivity
         setContentView(R.layout.view_calculator);
         Toolbar toolbar = (Toolbar) findViewById(R.id.Toolbar);
         setSupportActionBar(toolbar);
-
-        // okreslenie elementow
-
-        pierwsza = (EditText) findViewById(R.id.pierwsza);
-        druga = (EditText) findViewById(R.id.druga);
-
-        dodawanie = (Button) findViewById(R.id.dodawanie);
-        odejmowanie = (Button) findViewById(R.id.odejmowanie);
-        dzielenie = (Button) findViewById(R.id.dzielenie);
-        mnozenie = (Button) findViewById(R.id.mnozenie);
-        push = (Button) findViewById(R.id.push);
-
-        wynik = (TextView) findViewById(R.id.wynik);
-        informacja = (TextView) findViewById(R.id.informacja);
-        first = (TextView) findViewById(R.id.first);
-        second = (TextView) findViewById(R.id.second);
-
-        //wykonanie po nacisnieciu
-
-        dodawanie.setOnClickListener((View.OnClickListener) this);
-        odejmowanie.setOnClickListener((View.OnClickListener) this);
-        mnozenie.setOnClickListener((View.OnClickListener) this);
-        dzielenie.setOnClickListener((View.OnClickListener) this);
-        push.setOnClickListener((View.OnClickListener) this);
-
-
+        init();
     }
+        private void init()
+        {
+            // okreslenie elementow
+
+            pierwsza = (EditText) findViewById(R.id.pierwsza);
+            druga = (EditText) findViewById(R.id.druga);
+
+            dodawanie = (Button) findViewById(R.id.dodawanie);
+            odejmowanie = (Button) findViewById(R.id.odejmowanie);
+            dzielenie = (Button) findViewById(R.id.dzielenie);
+            mnozenie = (Button) findViewById(R.id.mnozenie);
+            push = (Button) findViewById(R.id.push);
+
+            wynik = (TextView) findViewById(R.id.wynik);
+            informacja = (TextView) findViewById(R.id.informacja);
+            first = (TextView) findViewById(R.id.first);
+            second = (TextView) findViewById(R.id.second);
+
+            //wykonanie po nacisnieciu
+
+            dodawanie.setOnClickListener(this);
+            odejmowanie.setOnClickListener(this);
+            mnozenie.setOnClickListener(this);
+            dzielenie.setOnClickListener(this);
+            push.setOnClickListener(this);
+
+        }
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
@@ -82,5 +87,10 @@ public class Calculator extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
