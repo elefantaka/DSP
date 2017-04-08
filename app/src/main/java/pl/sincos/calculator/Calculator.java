@@ -61,7 +61,40 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
 
         }
 
+    // zaimplementowana metoda
+    @Override
+    public void onClick(View view)
+    {
+        String num1 = pierwsza.getText().toString();
+        String num2 = druga.getText().toString();
+        switch(view.getId())
+        {
+            case R.id.dodawanie:
+                int addition = Integer.parseInt(num1) + Integer.parseInt(num2);
+                wynik.setText(String.valueOf(addition));
+                break;
+            case R.id.odejmowanie:
+                int substraction = Integer.parseInt(num1) - Integer.parseInt(num2);
+                wynik.setText(String.valueOf(substraction));
+                break;
+            case R.id.mnozenie:
+                    int multiply = Integer.parseInt(num1) * Integer.parseInt(num2);
+                    wynik.setText(String.valueOf(multiply));
+                    break;
+            case R.id.dzielenie:
+                try
+                {
+                    int division = Integer.parseInt(num1) / Integer.parseInt(num2);
+                    wynik.setText(String.valueOf(division));
+                    break;
+                }
+                catch(Exception e)
+                {
+                    wynik.setText("Cannot DIVINE!");
+                }
+        }
 
+    }
 
 
     @Override
@@ -89,8 +122,4 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View v) {
-
-    }
 }
