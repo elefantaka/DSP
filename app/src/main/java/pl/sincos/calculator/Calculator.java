@@ -84,7 +84,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             case R.id.dzielenie:
                 try
                 {
-                    int division = Integer.parseInt(num1) / Integer.parseInt(num2);
+                    double division = Double.parseDouble(num1) / Double.parseDouble(num2);
                     wynik.setText(String.valueOf(division));
                     break;
                 }
