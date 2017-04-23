@@ -1,6 +1,7 @@
 package pl.sincos.calculator;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,9 +20,25 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
 
     private EditText pierwsza, druga;
 
-    private Button dodawanie, odejmowanie, mnozenie, dzielenie, push;
+    private Button dodawanie, odejmowanie, mnozenie, dzielenie;
 
     private TextView wynik, informacja, first, second;
+
+    public Button push;
+
+    public void lalala()
+    {
+        push = (Button) findViewById(R.id.push);
+        push.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent sth = new Intent(Calculator.this,second.class);
+                startActivity(sth); //zeby dzialalo po kliknieciu
+            }
+        });
+    }
 
 
     @Override
@@ -31,6 +48,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.view_calculator);
         Toolbar toolbar = (Toolbar) findViewById(R.id.Toolbar);
         setSupportActionBar(toolbar);
+        lalala();
         init();
     }
         private void init()
@@ -44,7 +62,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             odejmowanie = (Button) findViewById(R.id.odejmowanie);
             dzielenie = (Button) findViewById(R.id.dzielenie);
             mnozenie = (Button) findViewById(R.id.mnozenie);
-            push = (Button) findViewById(R.id.push);
+            //push = (Button) findViewById(R.id.push);
 
             wynik = (TextView) findViewById(R.id.wynik);
             informacja = (TextView) findViewById(R.id.informacja);
@@ -57,7 +75,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             odejmowanie.setOnClickListener(this);
             mnozenie.setOnClickListener(this);
             dzielenie.setOnClickListener(this);
-            push.setOnClickListener(this);
+            //push.setOnClickListener(this);
 
         }
 
