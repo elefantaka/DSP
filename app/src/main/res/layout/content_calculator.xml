@@ -121,4 +121,13 @@
         android:layout_below="@+id/pierwsza "
         android:layout_alignParentStart="true" />
 
+    <Button
+        android:text="%"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/odejmowanie"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:id="@+id/mod" />
+
 </RelativeLayout>

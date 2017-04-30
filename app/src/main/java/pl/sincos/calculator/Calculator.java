@@ -20,7 +20,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
 
     private EditText pierwsza, druga;
 
-    private Button dodawanie, odejmowanie, mnozenie, dzielenie;
+    private Button dodawanie, odejmowanie, mnozenie, dzielenie, mod;
 
     private TextView wynik, informacja, first, second;
 
@@ -62,6 +62,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             odejmowanie = (Button) findViewById(R.id.odejmowanie);
             dzielenie = (Button) findViewById(R.id.dzielenie);
             mnozenie = (Button) findViewById(R.id.mnozenie);
+            mod = (Button) findViewById(R.id.mod);
             //push = (Button) findViewById(R.id.push);
 
             wynik = (TextView) findViewById(R.id.wynik);
@@ -75,6 +76,7 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             odejmowanie.setOnClickListener(this);
             mnozenie.setOnClickListener(this);
             dzielenie.setOnClickListener(this);
+            mod.setOnClickListener(this);
             //push.setOnClickListener(this);
 
         }
@@ -99,6 +101,10 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
                     int multiply = Integer.parseInt(num1) * Integer.parseInt(num2);
                     wynik.setText(String.valueOf(multiply));
                     break;
+            case R.id.mod:
+                int modulo = Integer.parseInt(num1) % Integer.parseInt(num2);
+                wynik.setText(String.valueOf(modulo));
+                break;
             case R.id.dzielenie:
                 try
                 {
@@ -141,3 +147,4 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
     }
 
 }
+//
