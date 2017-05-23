@@ -1,5 +1,6 @@
 package pl.sincos.calculator;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,17 +20,31 @@ public class second extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        videofun();
+        videoview();
         videoplay();
+        click();
     }
-    private void videofun()
+
+    private void videoview()
     {
-        play = (Button) findViewById(R.id.play);
         video = (VideoView) findViewById(R.id.video);
         media = new MediaController(this);
     }
 
-    public void videoplay()
+    private void click()
+    {
+        play = (Button) findViewById(R.id.play);
+        play.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                video.start();
+            }
+        });
+    }
+
+    private void videoplay()
     {
         String videopath = "android.resource://pl.sincos.calculator/" + R.raw.video;
         Uri uri = Uri.parse(videopath);
