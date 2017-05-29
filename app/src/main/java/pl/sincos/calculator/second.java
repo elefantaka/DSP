@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
@@ -13,7 +14,6 @@ public class second extends AppCompatActivity
 {
     private Button play;
     private VideoView video;
-    private MediaController media;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,7 +28,6 @@ public class second extends AppCompatActivity
     private void videoview()
     {
         video = (VideoView) findViewById(R.id.video);
-        media = new MediaController(this);
     }
 
     private void click()
@@ -49,8 +48,5 @@ public class second extends AppCompatActivity
         String videopath = "android.resource://pl.sincos.calculator/" + R.raw.video;
         Uri uri = Uri.parse(videopath);
         video.setVideoURI(uri);
-        video.setMediaController(media);
-        media.setAnchorView(video);
-        video.start();
     }
 }

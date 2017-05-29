@@ -11,6 +11,7 @@
     android:orientation="vertical"
     tools:context="pl.sincos.calculator.second">
 
+
     <Button
         android:text="play"
         android:onClick="play"

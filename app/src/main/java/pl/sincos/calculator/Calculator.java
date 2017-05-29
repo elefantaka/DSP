@@ -63,7 +63,6 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             dzielenie = (Button) findViewById(R.id.dzielenie);
             mnozenie = (Button) findViewById(R.id.mnozenie);
             mod = (Button) findViewById(R.id.mod);
-            //push = (Button) findViewById(R.id.push);
 
             wynik = (TextView) findViewById(R.id.wynik);
             informacja = (TextView) findViewById(R.id.informacja);
@@ -77,7 +76,6 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
             mnozenie.setOnClickListener(this);
             dzielenie.setOnClickListener(this);
             mod.setOnClickListener(this);
-            //push.setOnClickListener(this);
 
         }
 
@@ -119,31 +117,4 @@ public class Calculator extends AppCompatActivity implements View.OnClickListene
         }
 
     }
-
-
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_calculator, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
-        {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-*/
 }
